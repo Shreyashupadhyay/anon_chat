@@ -8,20 +8,20 @@ body {
 
 @layer base {
   :root {
-    --background: 0 0% 100%; /* Light Neutral Gray */
+    --background: 220 13% 95%; /* Light Neutral Gray */
     --foreground: 240 10% 3.9%; /* Dark Neutral Gray */
     --card: 0 0% 100%;
     --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
-    --primary: 180 100% 25.1%; /* Teal */
+    --primary: 180 100% 25.1%; /* Teal - Keep for primary elements like 'Me' avatar */
     --primary-foreground: 180 100% 95%; /* Light Teal/White */
     --secondary: 210 40% 96.1%; /* Soft Blue */
     --secondary-foreground: 210 40% 9%; /* Dark Blue/Gray */
     --muted: 210 30% 94%; /* Lighter Soft Blue/Gray */
     --muted-foreground: 210 10% 45%; /* Medium Soft Blue/Gray */
-    --accent: 210 40% 96.1%; /* Soft Blue (same as secondary for hover) */
-    --accent-foreground: 210 40% 9%; /* Dark Blue/Gray */
+    --accent: 180 100% 25.1%; /* Teal (#008080) for interactive elements like Send button */
+    --accent-foreground: 180 100% 95%; /* Light Teal/White */
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     --border: 210 20% 88%; /* Light Soft Blue/Gray Border */
@@ -37,8 +37,8 @@ body {
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 180 100% 25.1%; /* Teal */
     --sidebar-primary-foreground: 180 100% 95%;
-    --sidebar-accent: 210 40% 96.1%; /* Soft Blue */
-    --sidebar-accent-foreground: 210 40% 9%;
+    --sidebar-accent: 180 100% 25.1%; /* Teal for sidebar interactive */
+    --sidebar-accent-foreground: 180 100% 95%;
     --sidebar-border: 210 20% 88%;
     --sidebar-ring: 180 100% 25.1%; /* Teal */
   }
@@ -49,19 +49,19 @@ body {
     --card-foreground: 0 0% 98%;
     --popover: 240 10% 3.9%;
     --popover-foreground: 0 0% 98%;
-    --primary: 180 100% 25.1%; /* Teal */
+    --primary: 180 100% 30%; /* Teal - Keep for primary elements like 'Me' avatar */
     --primary-foreground: 180 100% 95%;
     --secondary: 210 40% 14.9%; /* Darker Soft Blue */
     --secondary-foreground: 0 0% 98%;
     --muted: 210 30% 10%; /* Very Dark Soft Blue/Gray */
     --muted-foreground: 210 10% 63%; /* Medium Soft Blue/Gray */
-    --accent: 210 40% 14.9%; /* Darker Soft Blue (same as secondary for hover) */
-    --accent-foreground: 0 0% 98%;
+    --accent: 180 100% 30%; /* Teal (#008080 adjusted for dark) for interactive */
+    --accent-foreground: 180 100% 95%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
     --border: 210 20% 18%; /* Dark Soft Blue/Gray Border */
     --input: 210 20% 18%; /* Dark Soft Blue/Gray Input */
-    --ring: 180 100% 25.1%; /* Teal Ring */
+    --ring: 180 100% 30%; /* Teal Ring */
     --chart-1: 180 70% 50%;
     --chart-2: 200 60% 45%;
     --chart-3: 210 80% 55%;
@@ -69,12 +69,12 @@ body {
     --chart-5: 230 75% 55%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 180 100% 25.1%; /* Teal */
+    --sidebar-primary: 180 100% 30%; /* Teal */
     --sidebar-primary-foreground: 180 100% 95%;
-    --sidebar-accent: 210 40% 14.9%; /* Darker Soft Blue */
-    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-accent: 180 100% 30%; /* Teal for sidebar interactive */
+    --sidebar-accent-foreground: 180 100% 95%;
     --sidebar-border: 210 20% 18%;
-    --sidebar-ring: 180 100% 25.1%; /* Teal */
+    --sidebar-ring: 180 100% 30%; /* Teal */
   }
 }
 
@@ -84,5 +84,24 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+    /* Smoother font rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
+
+/* Add subtle animation for typing indicator */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+    
