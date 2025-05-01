@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { SendHorizontal, DoorOpen, AlertTriangle } from 'lucide-react';
+import { SendHorizontal, DoorOpen, AlertTriangle, Loader2 } from 'lucide-react'; // Added Loader2 import
 import { useToast } from "@/hooks/use-toast";
 
 // Mock message structure - Replace with actual data structure
